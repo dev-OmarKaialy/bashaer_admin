@@ -1,0 +1,57 @@
+name: bashaer_admin
+description: "لوحة إدارة البشائر لتعليم القيادة — admin app for the Al-Bashaer driving school."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.8
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  equatable: ^2.0.8
+  injectable: ^2.7.1+4
+  get_it: ^9.2.1
+  flutter_screenutil: ^5.9.3
+  dartz: ^0.10.1
+  bot_toast: ^4.1.3
+  flutter_animate: ^4.5.2
+  font_awesome_flutter: ^11.0.0
+  easy_localization: ^3.0.8
+  flutter_bloc: ^9.1.1
+  freezed_annotation: ^3.1.0
+  firebase_core: ^4.15.0
+  cloud_firestore: ^6.10.0
+  firebase_auth: ^6.7.0
+  http: ^1.5.0
+  image_picker: ^1.2.1
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  build_runner: ^2.12.2
+  injectable_generator: ^2.12.1
+  freezed: ^3.2.5
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+    - family: ChakraPetch
+      fonts:
+        - asset: assets/fonts/ChakraPetch-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/ChakraPetch-Bold.ttf
+          weight: 700
+  assets:
+    - assets/translations/
+    - assets/icons/
