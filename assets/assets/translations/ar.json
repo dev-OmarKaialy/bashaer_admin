@@ -1,0 +1,299 @@
+{
+  "common": {
+    "save": "حفظ",
+    "saveShortcut": "حفظ (Ctrl+S)",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "close": "إغلاق",
+    "retry": "إعادة المحاولة",
+    "refresh": "تحديث",
+    "undo": "تراجع",
+    "more": "المزيد",
+    "copy": "نسخ",
+    "copied": "تم النسخ",
+    "preview": "معاينة كما يراها الطالب",
+    "optional": "اختياري",
+    "discard": "تجاهل التغييرات",
+    "unsavedTitle": "تغييرات غير محفوظة",
+    "unsavedMessage": "لديك تغييرات لم تُحفظ بعد. هل تريد تجاهلها؟",
+    "errorTitle": "تعذّر التحميل",
+    "noResults": "لا نتائج لـ «{query}»",
+    "clearSearch": "مسح البحث"
+  },
+  "validation": {
+    "required": "هذا الحقل مطلوب",
+    "username": "اسم المستخدم: أحرف إنجليزية وأرقام و . _ - (3 أحرف على الأقل)"
+  },
+  "errors": {
+    "unknown": "حدث خطأ غير متوقع، حاول مرة أخرى",
+    "network": "تحقق من الاتصال بالإنترنت ثم حاول مرة أخرى",
+    "permissionDenied": "لا تملك صلاحية تنفيذ هذا الإجراء",
+    "notFound": "العنصر غير موجود، ربما حُذف",
+    "alreadyExists": "العنصر موجود مسبقًا",
+    "missingIndex": "الاستعلام يحتاج فهرسًا في Firestore (firestore.indexes.json)"
+  },
+  "time": {
+    "justNow": "الآن",
+    "ago": "منذ {x}",
+    "endsToday": "ينتهي اليوم",
+    "endsIn": "ينتهي بعد {x}",
+    "endedToday": "انتهى اليوم",
+    "endedAgo": "انتهى منذ {x}",
+    "minutes": {
+      "zero": "0 دقيقة",
+      "one": "دقيقة",
+      "two": "دقيقتين",
+      "few": "{} دقائق",
+      "many": "{} دقيقة",
+      "other": "{} دقيقة"
+    },
+    "hours": {
+      "zero": "0 ساعة",
+      "one": "ساعة",
+      "two": "ساعتين",
+      "few": "{} ساعات",
+      "many": "{} ساعة",
+      "other": "{} ساعة"
+    },
+    "days": {
+      "zero": "0 يوم",
+      "one": "يوم واحد",
+      "two": "يومين",
+      "few": "{} أيام",
+      "many": "{} يومًا",
+      "other": "{} يوم"
+    }
+  },
+  "auth": {
+    "title": "لوحة إدارة البشائر",
+    "subtitle": "سجّل الدخول بحساب الإدارة",
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "signIn": "تسجيل الدخول",
+    "errors": {
+      "invalidCredentials": "اسم المستخدم أو كلمة المرور غير صحيحة",
+      "accountNotSetUp": "الحساب غير مُعدّ بعد (ينقصه salt أو passwordHash أو iterations)",
+      "unknown": "تعذّر تسجيل الدخول، حاول مرة أخرى"
+    }
+  },
+  "shell": {
+    "brand": "البشائر لتعليم القيادة",
+    "tabs": {
+      "licenses": "الطلبات",
+      "questions": "الأسئلة",
+      "categories": "التصنيفات",
+      "profile": "الملف الشخصي"
+    },
+    "signOut": "تسجيل الخروج",
+    "signOutTitle": "تسجيل الخروج؟",
+    "signOutMessage": "ستحتاج إلى إدخال اسم المستخدم وكلمة المرور مرة أخرى."
+  },
+  "licenses": {
+    "title": "الطلبات والاشتراكات",
+    "searchHint": "ابحث برقم الجهاز أو الاسم أو الهاتف",
+    "searchEmptyHint": "البحث بالاسم والهاتف يشمل الاشتراكات المفعّلة. للطلبات الجديدة الصق رقم الجهاز كاملًا.",
+    "selectHint": "اختر طلبًا أو اشتراكًا من القائمة لعرضه هنا",
+    "editorTitle": "طالب بدون اسم",
+    "filters": {
+      "pending": "قيد الانتظار",
+      "active": "نشط",
+      "expiring": "ينتهي قريبًا",
+      "expired": "منتهي",
+      "revoked": "موقوف"
+    },
+    "status": {
+      "pending": "قيد الانتظار",
+      "active": "نشط",
+      "expiring": "ينتهي قريبًا",
+      "expired": "منتهي",
+      "revoked": "موقوف"
+    },
+    "empty": {
+      "pending": "لا توجد طلبات جديدة 🎉",
+      "active": "لا توجد اشتراكات نشطة",
+      "expiring": "لا اشتراكات تنتهي خلال 7 أيام",
+      "expired": "لا توجد اشتراكات منتهية",
+      "revoked": "لا توجد اشتراكات موقوفة"
+    },
+    "actions": {
+      "approve": "تفعيل",
+      "extend": "تمديد",
+      "renew": "تجديد",
+      "restore": "إعادة تفعيل",
+      "revoke": "إيقاف الاشتراك"
+    },
+    "months": {
+      "zero": "0 شهر",
+      "one": "شهر",
+      "two": "شهران",
+      "few": "{} أشهر",
+      "many": "{} شهرًا",
+      "other": "{} شهر"
+    },
+    "pickDate": "تاريخ آخر",
+    "choosePeriod": "اختر مدة أو تاريخ انتهاء",
+    "activeUntilSummary": "سيكون نشطًا حتى {date} ({days})",
+    "accessSection": "الوصول",
+    "revokedWasUntil": "موقوف — كان نشطًا حتى {date}",
+    "profileSection": "بيانات الطالب",
+    "fullName": "الاسم الكامل",
+    "phone": "رقم الهاتف",
+    "note": "ملاحظة",
+    "saveProfile": "حفظ البيانات",
+    "detailsSection": "التفاصيل",
+    "deviceId": "رقم الجهاز",
+    "requestedAt": "تاريخ الطلب: {date}",
+    "updatedAt": "آخر تعديل: {date}",
+    "revokeTitle": "إيقاف الاشتراك؟",
+    "revokeMessage": "سيفقد الطالب الوصول فورًا ويرى أن اشتراكه موقوف. يمكنك إعادة تفعيله لاحقًا.",
+    "toast": {
+      "granted": "تم تفعيل الاشتراك",
+      "restored": "تمت إعادة تفعيل الاشتراك",
+      "revoked": "تم إيقاف الاشتراك",
+      "profileSaved": "تم حفظ بيانات الطالب"
+    },
+    "errors": {
+      "pastDate": "اختر تاريخ انتهاء في المستقبل"
+    }
+  },
+  "categories": {
+    "title": "التصنيفات",
+    "new": "تصنيف جديد",
+    "newTitle": "تصنيف جديد",
+    "empty": "لا توجد تصنيفات بعد",
+    "selectHint": "اختر تصنيفًا لتعديله، أو اسحب المقبض لإعادة الترتيب",
+    "dragHint": "اسحب لإعادة الترتيب",
+    "questionCount": "{count} سؤال",
+    "basicsSection": "المعلومات الأساسية",
+    "name": "اسم التصنيف",
+    "namePlaceholder": "اسم التصنيف",
+    "slug": "المعرّف",
+    "slugHelpNew": "أحرف إنجليزية صغيرة وأرقام وشرطات، مثل traffic-signs. لا يمكن تغييره بعد الإنشاء.",
+    "slugHelpLocked": "المعرّف ثابت لأن الأسئلة مرتبطة به.",
+    "description": "الوصف (اختياري)",
+    "iconSection": "الأيقونة",
+    "chooseIcon": "اختيار أيقونة",
+    "clearIcon": "بدون أيقونة",
+    "pickIcon": "اختر أيقونة",
+    "iconTabs": {
+      "emoji": "رموز",
+      "legacy": "الأيقونات الحالية"
+    },
+    "iconGroups": {
+      "vehicles": "مركبات",
+      "road": "الطريق والإشارات",
+      "mechanics": "الميكانيك",
+      "safety": "السلامة والطقس",
+      "learning": "التعلّم"
+    },
+    "legacyHint": "أيقونات تستخدمها التصنيفات الحالية. اختر واحدة منها للإبقاء على نفس الشكل.",
+    "deleteSection": "حذف التصنيف",
+    "deleteHint": "التصنيف فارغ ويمكن حذفه.",
+    "delete": "حذف التصنيف",
+    "deleteTitle": "حذف التصنيف؟",
+    "deleteMessage": "سيختفي التصنيف من تطبيق الطلاب. لا يمكن التراجع عن الحذف.",
+    "showQuestions": "عرض أسئلته",
+    "toast": {
+      "created": "تم إنشاء التصنيف",
+      "saved": "تم حفظ التصنيف",
+      "deleted": "تم حذف التصنيف",
+      "reordered": "تم حفظ الترتيب"
+    },
+    "errors": {
+      "nameRequired": "اسم التصنيف مطلوب",
+      "slugFormat": "استخدم أحرفًا إنجليزية صغيرة وأرقامًا وشرطات فقط",
+      "slugTaken": "هذا المعرّف مستخدم لتصنيف آخر",
+      "notEmpty": "لا يمكن حذف التصنيف — يحتوي على {count} سؤال. انقلها أو احذفها أولًا."
+    }
+  },
+  "questions": {
+    "title": "الأسئلة",
+    "new": "سؤال جديد",
+    "newTitle": "سؤال جديد · {qid}",
+    "editTitle": "السؤال {qid}",
+    "count": "{count} سؤال",
+    "countFiltered": "{visible} من {total}",
+    "searchHint": "ابحث في نص السؤال أو رقمه",
+    "selectHint": "اختر سؤالًا لتعديله، أو أضف سؤالًا جديدًا",
+    "empty": "لا توجد أسئلة بعد",
+    "noMatches": "لا أسئلة تطابق عوامل التصفية",
+    "trial": "تجريبي",
+    "trialBanner": "هذا السؤال ضمن التجربة المجانية — التعديل يظهر لجميع الطلاب غير المشتركين.",
+    "qidOrderBanner": "سيحصل السؤال على الرقم {qid}، وهو أطول من الأرقام الحالية، لذلك قد يظهر في غير ترتيبه في تطبيق الطلاب.",
+    "types": {
+      "singleChoice": "اختيار واحد",
+      "trueFalse": "صح / خطأ"
+    },
+    "filters": {
+      "category": "التصنيف",
+      "allCategories": "كل التصنيفات",
+      "type": "النوع",
+      "allTypes": "كل الأنواع",
+      "withImage": "بصورة",
+      "trial": "تجريبي",
+      "clear": "مسح",
+      "clearAll": "مسح عوامل التصفية"
+    },
+    "basicsSection": "السؤال",
+    "category": "التصنيف",
+    "questionTitle": "نص السؤال",
+    "titlePlaceholder": "نص السؤال يظهر هنا",
+    "imageSection": "الصورة",
+    "imageHelp": "PNG أو JPG حتى 8 ميغابايت. تُرفع الصورة الآن وتُحفظ مع السؤال عند الضغط على حفظ.",
+    "imageHelpNoUpload": "الرفع غير مفعّل في هذا الإصدار (لا يوجد مفتاح ImgBB). يمكنك لصق رابط صورة.",
+    "uploadImage": "رفع صورة",
+    "replaceImage": "تغيير الصورة",
+    "removeImage": "إزالة",
+    "pasteImageUrl": "لصق رابط",
+    "uploading": "جارٍ رفع الصورة…",
+    "answersSection": "الإجابات",
+    "correctHintSingle": "اضغط على الدائرة بجانب الإجابة الصحيحة.",
+    "answerHint": "الإجابة {n}",
+    "addAnswer": "إضافة إجابة",
+    "removeAnswer": "حذف الإجابة",
+    "markCorrect": "تحديد كإجابة صحيحة",
+    "markedCorrect": "إجابة صحيحة",
+    "hint": "تلميح (اختياري)",
+    "typeChangeTitle": "تغيير نوع السؤال؟",
+    "typeChangeMessage": "ستُستبدل الإجابات الحالية بإجابتي صح وخطأ.",
+    "typeChangeConfirm": "تغيير النوع",
+    "delete": "حذف السؤال",
+    "deleteTitle": "حذف السؤال؟",
+    "deleteMessage": "سيختفي السؤال من تطبيق الطلاب. لا يمكن التراجع عن الحذف.",
+    "deleteTrialMessage": "هذا السؤال ضمن التجربة المجانية؛ حذفه يغيّر أسئلة التجربة لكل الطلاب. لا يمكن التراجع عن الحذف.",
+    "addAnother": "إضافة سؤال آخر",
+    "toast": {
+      "saved": "تم حفظ السؤال",
+      "created": "تمت إضافة السؤال {qid}",
+      "deleted": "تم حذف السؤال",
+      "answerRemoved": "تم حذف الإجابة"
+    },
+    "errors": {
+      "invalid": "راجع الحقول المحددة بالأحمر",
+      "categoryRequired": "اختر تصنيفًا",
+      "titleRequired": "نص السؤال مطلوب",
+      "tooFewAnswers": "أضف إجابتين على الأقل",
+      "trueFalseAnswers": "سؤال صح/خطأ يحتاج إجابتين بالضبط",
+      "answerEmpty": "اكتب نص الإجابة",
+      "noCorrect": "حدّد الإجابة الصحيحة",
+      "oneCorrect": "حدّد إجابة صحيحة واحدة فقط",
+      "qidTaken": "رقم السؤال مستخدم، حاول مرة أخرى",
+      "notAnImage": "الملف ليس صورة مدعومة (PNG أو JPG أو WebP أو GIF)",
+      "imageTooLarge": "حجم الصورة أكبر من 8 ميغابايت",
+      "noUploadKey": "رفع الصور غير مفعّل في هذا الإصدار",
+      "uploadNetwork": "تعذّر رفع الصورة. تحقق من الاتصال، أو الصق رابط الصورة",
+      "uploadFailed": "رفض خادم الصور الملف. جرّب صورة أخرى",
+      "badUrl": "أدخل رابطًا يبدأ بـ https://"
+    }
+  },
+  "profile": {
+    "role": "مدير",
+    "accountSection": "الحساب",
+    "sessionTitle": "الجلسة على هذا الجهاز",
+    "sessionBody": "تبقى مسجّل الدخول على هذا الجهاز حتى تسجّل الخروج أو تتغيّر كلمة المرور.",
+    "passwordTitle": "تغيير كلمة المرور",
+    "passwordBody": "تُدار الحسابات في مجموعة admins في Firestore. لتغيير كلمة المرور شغّل الأداة التالية في مشروع الإدارة ثم انسخ القيم إلى مستند الحساب (التفاصيل في docs/admin-account.md):"
+  }
+}
