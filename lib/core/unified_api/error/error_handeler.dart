@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import '../../extensions/log_colors_extension.dart';
@@ -40,8 +39,6 @@ class ErrorHandler implements Exception {
   ErrorHandler.handle(Object error) {
     if (error is Failure) {
       failure = error;
-    } else if (error is FirebaseAuthException) {
-      failure = FirebaseFailure(message: _authKey(error.code), code: error.code);
     } else if (error is FirebaseException) {
       log('Firebase error ${error.plugin}/${error.code}: ${error.message}'.logRed);
       failure = FirebaseFailure(message: _firestoreKey(error.code), code: error.code);
@@ -68,25 +65,6 @@ class ErrorHandler implements Exception {
         return 'errors.missingIndex';
       default:
         return 'errors.unknown';
-    }
-  }
-
-  static String _authKey(String code) {
-    switch (code) {
-      case 'invalid-credential':
-      case 'wrong-password':
-      case 'user-not-found':
-      case 'invalid-email':
-      case 'INVALID_LOGIN_CREDENTIALS':
-        return 'auth.errors.invalidCredentials';
-      case 'user-disabled':
-        return 'auth.errors.disabled';
-      case 'too-many-requests':
-        return 'auth.errors.tooManyRequests';
-      case 'network-request-failed':
-        return 'errors.network';
-      default:
-        return 'auth.errors.unknown';
     }
   }
 }

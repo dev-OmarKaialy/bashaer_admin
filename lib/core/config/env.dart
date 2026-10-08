@@ -1,6 +1,10 @@
-/// Build-time configuration passed with `--dart-define`. Never commit values.
+/// Build-time configuration, read from `config/env.json` (git-ignored; copy
+/// `config/env.example.json`) by passing it to every run/build:
 ///
-/// `fvm flutter run --dart-define=IMGBB_API_KEY=<key>`
+/// ```
+/// fvm flutter run --dart-define-from-file=config/env.json
+/// fvm flutter build apk --release --dart-define-from-file=config/env.json
+/// ```
 class Env {
   Env._();
 

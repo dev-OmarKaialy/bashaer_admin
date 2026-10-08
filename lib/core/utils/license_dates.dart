@@ -35,7 +35,11 @@ class LicenseDates {
   }
 
   /// End of the day [months] after [presetBase].
-  static DateTime presetUntil({required DateTime now, DateTime? currentUntil, required int months}) {
+  static DateTime presetUntil({
+    required DateTime now,
+    DateTime? currentUntil,
+    required int months,
+  }) {
     return endOfLocalDay(addMonths(presetBase(now: now, currentUntil: currentUntil), months));
   }
 }

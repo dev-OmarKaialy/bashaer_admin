@@ -476,7 +476,6 @@ class AppTheme {
   );
 }
 
-
 /// Admin-only roles mapped onto the shared palette. No new colors: every
 /// value is an [AppTheme] token, so the admin stays on-brand.
 class AdminTokens {
@@ -487,6 +486,9 @@ class AdminTokens {
 
   /// Pointer hover on rows (web/desktop).
   static const Color hoverRow = AppTheme.mutedSurface;
+
+  /// Invisible stroke that keeps row content from shifting when selected.
+  static const Color clear = Color(0x00000000);
 
   /// Panel surfaces: lists, editors, cards.
   static const Color panel = AppTheme.cardSurface;

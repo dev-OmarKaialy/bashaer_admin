@@ -1,17 +1,65 @@
-# bashaer_admin
+# Bashaer Admin
 
-A new Flutter project.
+Admin app for Al-Bashaer driving school (Android + web, Arabic/RTL). It manages
+what the students' app (`bashaer_user`) reads from Firestore project
+`bashaer-68ee6`: license requests, categories, questions and the monthly plan.
 
-## Getting Started
+Plans: `admin-app-plan.md` and `docs/plans/`.
 
-This project is a starting point for a Flutter application.
+## One-time setup
 
-A few resources to get you started if this is your first Flutter project:
+1. **Firebase rules and indexes** (in `bashaer_user`, already edited there):
+   ```
+   firebase deploy --only firestore
+   ```
+   Test the rules in the emulator first. The students' app keeps working: its
+   only write (a pending license request) is still allowed.
+2. **Admin account (username + password):** accounts live in the Firestore
+   `admins` collection, with no Firebase Auth. Follow `docs/admin-account.md`:
+   run `fvm dart run tool/admin_password.dart`, then paste `salt`,
+   `passwordHash` and `iterations` into the admin document.
+3. **Firebase options:** done (`flutterfire configure` registered Android
+   `com.bashaer.admin` and the web app `bashaer_admin (web)`).
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## ImgBB key (question images)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The key is read at build time from `config/env.json`, which is git-ignored:
+
+```json
+{
+  "IMGBB_API_KEY": "<your imgbb key>"
+}
+```
+
+`config/env.example.json` is the committed template. With an empty key the
+"upload image" button is hidden; pasting an image link still works.
+
+## Run
+
+```
+fvm flutter pub get
+fvm flutter run -d chrome --dart-define-from-file=config/env.json
+fvm flutter run -d <android-device> --dart-define-from-file=config/env.json
+```
+
+VS Code: the configurations in `.vscode/launch.json` already pass the file.
+
+## Release APK (signed with android/key.properties)
+
+```
+fvm flutter build apk --release --dart-define-from-file=config/env.json
+```
+
+## Codegen
+
+```
+fvm dart run build_runner build --delete-conflicting-outputs
+```
+
+## Web deploy
+
+```
+fvm flutter build web --release --dart-define-from-file=config/env.json
+firebase deploy --only hosting
+```
+`firebase.json` here sets the hosting cache headers and `noindex`.

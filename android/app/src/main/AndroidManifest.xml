@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Firestore, Firebase Auth and the ImgBB upload. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="bashaer_admin"
+        android:label="إدارة البشائر"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

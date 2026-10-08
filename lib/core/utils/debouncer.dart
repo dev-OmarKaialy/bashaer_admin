@@ -9,12 +9,12 @@ class Debouncer {
 
   Debouncer({required this.milliseconds});
 
-  run(VoidCallback action) {
+  void run(VoidCallback action) {
     _timer?.cancel(); // Cancel previous timer if still active
     _timer = Timer(Duration(milliseconds: milliseconds), action);
   }
 
-  dispose() {
+  void dispose() {
     _timer?.cancel();
   }
 }

@@ -47,9 +47,15 @@ class AppFormatters {
   static String ago(DateTime value, DateTime now) {
     final diff = now.difference(value.toLocal());
     if (diff.inMinutes < 1) return 'time.justNow'.tr();
-    if (diff.inHours < 1) return 'time.ago'.tr(namedArgs: {'x': plural('time.minutes', diff.inMinutes)});
-    if (diff.inDays < 1) return 'time.ago'.tr(namedArgs: {'x': plural('time.hours', diff.inHours)});
-    return 'time.ago'.tr(namedArgs: {'x': plural('time.days', diff.inDays)});
+    final String amount;
+    if (diff.inHours < 1) {
+      amount = plural('time.minutes', diff.inMinutes);
+    } else if (diff.inDays < 1) {
+      amount = plural('time.hours', diff.inHours);
+    } else {
+      amount = plural('time.days', diff.inDays);
+    }
+    return 'time.ago'.tr(namedArgs: {'x': amount});
   }
 
   /// "ينتهي اليوم", "ينتهي بعد 5 أيام", "انتهى منذ يومين".

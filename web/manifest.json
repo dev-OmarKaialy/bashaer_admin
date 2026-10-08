@@ -1,12 +1,13 @@
 {
-    "name": "bashaer_admin",
-    "short_name": "bashaer_admin",
+    "name": "لوحة إدارة البشائر",
+    "short_name": "إدارة البشائر",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#f3f6fd",
+    "theme_color": "#2e6bff",
+    "description": "لوحة إدارة البشائر لتعليم القيادة",
+    "lang": "ar",
+    "dir": "rtl",
     "prefer_related_applications": false,
     "icons": [
         {

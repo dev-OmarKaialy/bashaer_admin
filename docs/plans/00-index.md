@@ -52,12 +52,37 @@ A phase is **done** when:
 - it renders all five states (02-ui-system §5) for every data-driven screen
 - `dart analyze` is clean and the approved tests pass
 
-## Decisions still open (ask the user, one message)
+## Decisions (answered 2026-10-08)
 
-| # | Question | Recommendation |
+| # | Question | Decision |
 |---|---|---|
-| D1 | Add `go_router` for URL routing on web (refresh and back keep you in place, and deep links like `/licenses/<id>` work)? | Yes. Without it, a web refresh always lands on the home tab. Needs C5 approval. |
-| D2 | Add `intl` directly for Arabic date and relative-time formatting? It is already a transitive dependency of `easy_localization`. | Yes. The alternative is a small hand-written formatter. |
-| D3 | Add `bloc_test` (plan §8 already asks)? | Yes, for the license, editor and reorder cubits. |
-| D4 | Dark theme? | No for MVP. The tokens are organized so it can be added later. |
-| D5 | Build web with `--wasm` (skwasm renderer)? | Only if the phase 0 spike shows every plugin is wasm-compatible. Otherwise use CanvasKit. |
+| D1 | `go_router` for URL routing on web? | **No.** Simple admin app; imperative `Navigator` like the template. A web refresh returns to the licenses tab. |
+| D2 | `intl` for Arabic dates? | **Yes**, added. |
+| D3 | `bloc_test` / tests? | **No test files.** The owner tests the app manually. |
+| D4 | Dark theme? | **No.** |
+| D5 | Build web/Android here? | **No builds.** Code only; the owner runs and tests the app. Wasm is not decided. |
+
+## Implementation notes (where the code differs from these plans)
+
+- **Screen sizing:** instead of a design size per width class, `ScreenUtilInit` keeps the
+  students' 390×844 design and turns scaling **off** at ≥ 600 px (`enableScaleWH` /
+  `enableScaleText`), so desktop uses sizes 1:1.
+- **Answer ids are kept, not renumbered.** Seeded data uses `a1…`, `a`/`b`/`c` and
+  `true`/`false`. Renaming them could break students' saved answer history, so only new
+  answers get the next free `aN`. `correctAnswerIds` is still remapped by id.
+- **qids:** the seed bank also has `ts01`–`ts05`. `nextQid` only counts `qN` ids. A banner
+  warns when the next id is wider than the existing ones and would sort out of order
+  in the students' app.
+- **Third license index:** expired licenses are listed newest first, so
+  `licenses (isActive ASC, activeUntil DESC)` is also needed (three indexes in total).
+- **Merge updates** write only the editor's fields. Unknown fields such as `audio`
+  survive on their own, so the models carry no `extra` map.
+- **Image upload** has a "paste link" fallback that always works, so a CORS failure on web
+  doesn't block anything.
+- **Phase 4** (dashboard, import/export) is not implemented yet.
+- **No subscription editor.** The owner removed it (2026-10-08). The fourth tab
+  is **Profile** (signed-in admin, session info, how to change the password, sign out).
+  The students' app still reads `subscription_plans/monthly`; it is edited in the
+  Firebase console.
+- **Auth:** username + password checked against the Firestore `admins` collection
+  (PBKDF2), with no Firebase Auth. See `docs/admin-account.md`.

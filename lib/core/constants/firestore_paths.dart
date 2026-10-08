@@ -7,8 +7,4 @@ class FirestorePaths {
   static const String categories = 'categories';
   static const String questions = 'questions';
   static const String licenses = 'licenses';
-  static const String subscriptionPlans = 'subscription_plans';
-
-  /// The plan the students' subscribe screen reads.
-  static const String monthlyPlanId = 'monthly';
 }
